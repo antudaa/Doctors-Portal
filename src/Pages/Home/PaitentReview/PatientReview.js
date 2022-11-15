@@ -3,6 +3,7 @@ import quote from '../../../assets/icons/quote.svg';
 import img1 from '../../../assets/images/people1.png';
 import img2 from '../../../assets/images/people2.png';
 import img3 from '../../../assets/images/people3.png';
+import HomePatientReviews from './HomePatientReviews';
 
 
 
@@ -18,14 +19,14 @@ const PatientReview = () => {
             img: img1
         },
         {
-            id: 1,
+            id: 2,
             name: "Farnandez",
             location: "USA",
             review: "There are too good .There service is just awesome the price is also good...",
             img: img2
         },
         {
-            id: 1,
+            id: 3,
             name: "Kareena",
             location: "Korea",
             review: "There are too good .There service is just awesome the price is also good...",
@@ -48,24 +49,10 @@ const PatientReview = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {
-                    data.map((info) => (
-                        <div className='bg-white drop-shadow-2xl p-7 rounded-xl text-black'>
-                            <div>
-                                <p className='my-6'>{info.review}</p>
-                            </div>
-                            <div className='flex justify-start'>
-                                <div className="avatar mr-8">
-                                    <div className="w-14 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                        <img src={info.img} alt=''/>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p className='block font-bold text-xl'>{info.name}</p>
-                                    <p className='block font-semibold text-lg'>{info.location}</p>
-                                </div>
-                            </div>
-                        </div>
-                    ))
+                    data.map((info) => <HomePatientReviews
+                        key={info.id}
+                        info={info}
+                    ></HomePatientReviews>)
                 }
             </div>
         </div>
